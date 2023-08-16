@@ -15,6 +15,27 @@ loader.classList.replace('loader', 'is-hidden');
 error.classList.add('is-hidden');
 divCatInfo.classList.add('is-hidden');
 
+fetchBreeds()
+.then(arr =>{
+  console.logt(arr);
+  selector.innerHTML = createMarkup(arr);
+  select();
+})
+.catch(onFetchError);
+function select() {
+  new SlimSelect({
+    select:selector,
+  })
+}
+
+function createMarkup(arr){
+  return arr
+  .map(({id, name}) => {
+    return `<option value="${id}">${name}</option>`;
+  }) 
+  .join(``);
+}
+
 let arrBreedsId = [];
 fetchBreeds()
 .then(data => {
