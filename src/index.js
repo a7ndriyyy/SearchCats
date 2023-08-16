@@ -22,19 +22,7 @@ fetchBreeds()
   select();
 })
 .catch(onFetchError);
-function select() {
-  new SlimSelect({
-    select:selector,
-  })
-}
 
-function createMarkup(arr){
-  return arr
-  .map(({id, name}) => {
-    return `<option value="${id}">${name}</option>`;
-  }) 
-  .join(``);
-}
 
 let arrBreedsId = [];
 fetchBreeds()
@@ -79,3 +67,17 @@ function onFetchError(error) {
       fontSize: '24px'
   });
 };
+
+function select() {
+  new SlimSelect({
+    select:selector,
+  })
+}
+
+function createMarkup(arr){
+  return arr
+  .map(({id, name}) => {
+    return `<option value="${id}">${name}</option>`;
+  }) 
+  .join(``);
+}
