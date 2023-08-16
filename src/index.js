@@ -26,13 +26,13 @@ fetchBreeds()
 
 let arrBreedsId = [];
 fetchBreeds()
-.then(data => {
-  data.forEach(element => {
+.then(arr => {
+  arr.forEach(element => {
       arrBreedsId.push({text: element.name, value: element.id});
   });
   new SlimSelect({
       select: selector,
-      data: arrBreedsId
+      arr: arrBreedsId
   });
   })
 .catch(onFetchError);
