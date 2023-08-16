@@ -17,7 +17,7 @@ divCatInfo.classList.add('is-hidden');
 
 fetchBreeds()
 .then(arr =>{
-  console.logt(arr);
+  console.log(arr);
   selector.innerHTML = createMarkup(arr);
   select();
 })
