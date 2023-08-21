@@ -26,8 +26,8 @@ divCatInfo.classList.add('is-hidden');
 
 let arrBreedsId = [];
 fetchBreeds()
-.then(data => {
- data.data.forEach(element => {
+.then(arr => {
+  arr.data.forEach(element => {
       arrBreedsId.push({text: element.name, value: element.id});
   });
   const optionsMarkup = arrBreedsId.map(({value, text}) => {
@@ -37,7 +37,7 @@ fetchBreeds()
   selector.innerHTML = optionsMarkup;
   new SlimSelect({
       select: selector,
-      data: arrBreedsId,
+      arr: arrBreedsId,
   });
   })
 .catch(onFetchError);
@@ -79,9 +79,9 @@ function select() {
   })
 }
 
-function createMarkup(data){
-  return data
-.map(({id, name}) => {
+function createMarkup(arr){
+  return arr.data
+  .map(({id, name}) => {
     return `<option value="${id}">${name}</option>`;
   }) 
   .join(``);
