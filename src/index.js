@@ -37,7 +37,7 @@ fetchBreeds()
   selector.innerHTML = optionsMarkup;
   new SlimSelect({
       select: selector,
-      arr: arrBreedsId,
+      data: arrBreedsId,
   });
   })
 .catch(onFetchError);
