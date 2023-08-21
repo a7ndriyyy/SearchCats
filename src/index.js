@@ -76,7 +76,7 @@ function select() {
 }
 
 function createMarkup(arr){
-  return arr
+  return arr.data
   .map(({id, name}) => {
     return `<option value="${id}">${name}</option>`;
   }) 
