@@ -31,6 +31,11 @@ fetchBreeds()
   arr.data.forEach(element => {
       arrBreedsId.push({text: element.name, value: element.id});
   });
+  const optionsMarkup = arrBreedsId.map(({id, name}) => {
+    return `<option value="${id}">${name}</option>`;
+  }) 
+  .join(``);
+  selector.innerHTML = optionsMarkup;
   new SlimSelect({
       select: selector,
       arr: arrBreedsId,
