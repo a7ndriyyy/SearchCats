@@ -31,8 +31,8 @@ fetchBreeds()
   arr.data.forEach(element => {
       arrBreedsId.push({text: element.name, value: element.id});
   });
-  const optionsMarkup = arrBreedsId.map(({id, name}) => {
-    return `<option value="${id}">${name}</option>`;
+  const optionsMarkup = arrBreedsId.map(({value, name}) => {
+    return `<option value="${value}">${name}</option>`;
   }) 
   .join(``);
   selector.innerHTML = optionsMarkup;
@@ -82,8 +82,8 @@ function select() {
 
 function createMarkup(arr){
   return arr.data
-  .map(({id, name}) => {
-    return `<option value="${id}">${name}</option>`;
+  .map(({value, name}) => {
+    return `<option value="${value}">${name}</option>`;
   }) 
   .join(``);
 }
