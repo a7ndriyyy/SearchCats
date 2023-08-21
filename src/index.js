@@ -23,7 +23,6 @@ fetchBreeds()
 })
 // .catch(onFetchError);
 
-
 let arrBreedsId = [];
 fetchBreeds()
 .then(arr => {
@@ -32,7 +31,7 @@ fetchBreeds()
   });
   new SlimSelect({
       select: selector,
-      arr: arrBreedsId
+      arr: arrBreedsId,
   });
   })
 .catch(onFetchError);
@@ -81,4 +80,5 @@ function createMarkup(arr){
   }) 
   .join(``);
 }
+
 
