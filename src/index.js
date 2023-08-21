@@ -15,18 +15,20 @@ loader.classList.replace('loader', 'is-hidden');
 error.classList.add('is-hidden');
 divCatInfo.classList.add('is-hidden');
 
-// fetchBreeds()
-// .then(arr =>{
-//   console.log(arr);
-//   selector.innerHTML = createMarkup(arr);
-//   select();
-// })
+
+fetchBreeds()
+.then(arr =>{
+  console.log(arr);
+  selector.innerHTML = createMarkup(arr);
+  select();
+})
 // .catch(onFetchError);
+
 
 let arrBreedsId = [];
 fetchBreeds()
 .then(arr => {
-  arr.forEach(element => {
+  arr.data.forEach(element => {
       arrBreedsId.push({text: element.name, value: element.id});
   });
   new SlimSelect({
