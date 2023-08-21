@@ -24,18 +24,18 @@ divCatInfo.classList.add('is-hidden');
 // })
 // .catch(onFetchError);
 
-
 let arrBreedsId = [];
 fetchBreeds()
 .then(arr => {
   arr.data.forEach(element => {
       arrBreedsId.push({text: element.name, value: element.id});
   });
-  const optionsMarkup = arrBreedsId.map(({value, name}) => {
-    return `<option value="${value}">${name}</option>`;
+  const optionsMarkup = arrBreedsId.map(({value, text}) => {
+    return `<option value="${value}">${text}</option>`;
   }) 
   .join(``);
   selector.innerHTML = optionsMarkup;
+  
   new SlimSelect({
       select: selector,
       arr: arrBreedsId,
@@ -73,7 +73,7 @@ function onFetchError(error) {
       fontSize: '24px'
   });
 };
- 
+
 function select() {
   new SlimSelect({
     select:selector,
