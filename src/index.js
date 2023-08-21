@@ -21,7 +21,7 @@ fetchBreeds()
   selector.innerHTML = createMarkup(arr);
   select();
 })
-.catch(onFetchError);
+// .catch(onFetchError);
 
 
 let arrBreedsId = [];
