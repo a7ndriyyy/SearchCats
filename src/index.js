@@ -27,7 +27,7 @@ divCatInfo.classList.add('is-hidden');
 let arrBreedsId = [];
 fetchBreeds()
 .then(data => {
- data.forEach(element => {
+ data.data.forEach(element => {
       arrBreedsId.push({text: element.name, value: element.id});
   });
   const optionsMarkup = arrBreedsId.map(({value, text}) => {
@@ -81,7 +81,7 @@ function select() {
 
 function createMarkup(data){
   return data
-  .map(({id, name}) => {
+.map(({id, name}) => {
     return `<option value="${id}">${name}</option>`;
   }) 
   .join(``);
