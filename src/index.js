@@ -73,7 +73,7 @@ function onFetchError(error) {
       fontSize: '24px'
   });
 };
-
+ 
 function select() {
   new SlimSelect({
     select:selector,
